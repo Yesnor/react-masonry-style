@@ -8,7 +8,7 @@ const Photo = require("./models/Photo");
 
 const app = express();
 
-const PORT = 8000;
+const PORT = process.env.PORT || 8000;
 const DB = process.env.MONGO_DB;
 
 app.use(cors());
@@ -24,6 +24,9 @@ connection.once("open", () => {
   console.log("Connection with MongoDB database was established");
 });
 
+// app.get("/", (req, res) => {
+//   console.log(req.hostname);
+// });
 app.get("/getAll", async (req, res) => {
   const photos = await Photo.find({});
   if (photos.length > 0) {
