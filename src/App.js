@@ -1,23 +1,47 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState, useEffect, useContext } from "react";
+import axios from "axios";
+import Header from "./Header";
+import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
+import AddPhotoModal from "./AddPhotoModal";
+import DeletePhotoModal from "./DeletePhotoModal";
+import { context } from "./context";
 
 function App() {
+  const [deleteId, setDeleteId] = useState("");
+  const { state, dispatch } = useContext(context);
+
+  useEffect(() => {
+    axios.get("http://localhost:8000/getAll").then((res) => {
+      dispatch({ type: "fetch_all_photos", payload: res.data.reverse() });
+    });
+    // eslint-disable-next-line
+  }, []);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header />
+      <AddPhotoModal />
+      <DeletePhotoModal id={deleteId} />
+      <ResponsiveMasonry>
+        <Masonry columnsCount={3} gutter="15px">
+          {state.photos.length > 0 &&
+            state.photos.map((photo) => {
+              return (
+                <img
+                  key={photo._id}
+                  className="card-img-top"
+                  alt="This is alt attribute"
+                  src={photo.url}
+                  onClick={() => {
+                    setDeleteId(photo._id);
+                  }}
+                  data-bs-toggle="modal"
+                  data-bs-target="#deletePhoto"
+                />
+              );
+            })}
+        </Masonry>
+      </ResponsiveMasonry>
     </div>
   );
 }
