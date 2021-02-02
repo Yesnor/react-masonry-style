@@ -17,7 +17,7 @@ export default function Header() {
         </h5>
         <div
           className="form-group position-relative"
-          style={{ marginLeft: "1rem" }}
+          style={{ margin: "0 .5rem 0" }}
         >
           <span
             className="material-icons position-absolute"

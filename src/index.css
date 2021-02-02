@@ -34,3 +34,9 @@ code {
 img:hover {
   cursor: pointer;
 }
+
+@media screen and (max-width: 500px) {
+  .header-left .form-group {
+    width: 170px;
+  }
+}
