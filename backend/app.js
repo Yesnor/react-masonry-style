@@ -24,9 +24,6 @@ connection.once("open", () => {
   console.log("Connection with MongoDB database was established");
 });
 
-// app.get("/", (req, res) => {
-//   console.log(req.hostname);
-// });
 app.get("/getAll", async (req, res) => {
   const photos = await Photo.find({});
   if (photos.length > 0) {
