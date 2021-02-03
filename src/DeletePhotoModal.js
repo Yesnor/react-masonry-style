@@ -12,13 +12,13 @@ export default function DeletePhotoModal({ id }) {
     if (password) {
       console.log(id);
       axios
-        .delete(`http://localhost:8000/deletePhoto`, {
+        .delete("/deletePhoto", {
           data: { id, password },
         })
         .then((res) => {
           console.log(res);
           if (res.status === 200) {
-            axios.get(`http://localhost:8000/getAll`).then((res) => {
+            axios.get("/getAll").then((res) => {
               dispatch({
                 type: "fetch_all_photos",
                 payload: res.data.reverse(),

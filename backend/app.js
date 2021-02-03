@@ -8,7 +8,7 @@ const Photo = require("./models/Photo");
 
 const app = express();
 
-const PORT = process.env.PORT || 8000;
+const PORT = process.env.PORT;
 const DB = process.env.MONGO_DB;
 
 app.use(cors());
