@@ -22,7 +22,7 @@ export default function AddPhotoModal() {
     e.preventDefault();
     const photo = { photoUrl, label };
     if (validateUrl(photo.photoUrl)) {
-      axios.post("http://localhost:8000/addPhoto", photo);
+      axios.post("/addPhoto", photo);
       dispatch({ type: "add_photo", payload: photo });
       setIsAdded(true);
     } else {
