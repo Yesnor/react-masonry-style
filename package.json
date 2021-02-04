@@ -16,7 +16,7 @@
     "web-vitals": "^0.2.4"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "concurrently \"react-scripts start \" \"npm run --prefix backend server \"",
     "dev": "concurrently \"npm run start \" \"npm run --prefix backend server \"",
     "build": "CI= react-scripts build",
     "test": "react-scripts test",
