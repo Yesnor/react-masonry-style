@@ -1987,9 +1987,9 @@
   "version" "3.0.3"
 
 "@types/node@*":
-  "integrity" "sha512-u/SJDyXwuihpwjXy7hOOghagLEV1KdAST6syfnOk6QZAMzZuWZqXy5aYYZbh8Jdpd4escVFP0MvftHNDb9pruA=="
-  "resolved" "https://registry.yarnpkg.com/@types/node/-/node-12.12.14.tgz"
-  "version" "12.12.14"
+  "integrity" "sha512-EPpXLOVqDvisVxtlbvzfyqSsFeQxltFbluZNRndIb8tr9KiBnYNLzrc1N3pyKUCww2RNrfHDViqDWWE1LCJQtQ=="
+  "resolved" "https://registry.npmjs.org/@types/node/-/node-14.14.25.tgz"
+  "version" "14.14.25"
 
 "@types/normalize-package-data@^2.4.0":
   "integrity" "sha512-f5j5b/Gf71L+dbqxIpQ4Z2WlmI/mPJ0fOkGGmFgtb6sAu97EPczzbS3/tJKxmcYDj55OX6ssqwDAWOHIYDRDGA=="
