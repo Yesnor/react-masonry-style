@@ -19,7 +19,8 @@
     "web-vitals": "^0.2.4"
   },
   "scripts": {
-    "netlify": "netlify dev"
+    "netlify": "netlify dev",
+    "build": "CI= react-scripts build"
   },
   "eslintConfig": {
     "extends": [
