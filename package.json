@@ -19,6 +19,7 @@
     "web-vitals": "^0.2.4"
   },
   "scripts": {
+    "start": "react-scripts start",
     "netlify": "netlify dev",
     "build": "CI= react-scripts build"
   },
