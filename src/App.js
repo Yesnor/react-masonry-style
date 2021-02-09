@@ -11,7 +11,8 @@ function App() {
   const { state, dispatch } = useContext(context);
 
   useEffect(() => {
-    axios.get("/getAll").then((res) => {
+    axios.get("/api/getAll").then((res) => {
+      console.log(res.data, "get all received");
       dispatch({ type: "fetch_all_photos", payload: res.data.reverse() });
     });
     // eslint-disable-next-line

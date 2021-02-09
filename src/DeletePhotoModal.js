@@ -10,15 +10,11 @@ export default function DeletePhotoModal({ id }) {
   const deletePhoto = (e) => {
     e.preventDefault();
     if (password) {
-      console.log(id);
       axios
-        .delete("/deletePhoto", {
-          data: { id, password },
-        })
+        .post("/api/deletePhoto", { id, password })
         .then((res) => {
-          console.log(res);
           if (res.status === 200) {
-            axios.get("/getAll").then((res) => {
+            axios.get("/api/getAll").then((res) => {
               dispatch({
                 type: "fetch_all_photos",
                 payload: res.data.reverse(),

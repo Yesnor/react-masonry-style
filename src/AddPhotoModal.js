@@ -21,13 +21,14 @@ export default function AddPhotoModal() {
   const addPhoto = (e) => {
     e.preventDefault();
     const photo = { photoUrl, label };
-    if (validateUrl(photo.photoUrl)) {
-      axios.post("/addPhoto", photo);
-      dispatch({ type: "add_photo", payload: photo });
-      setIsAdded(true);
-    } else {
-      console.log("not an url", photoUrl);
-    }
+    axios.post("/api/addPhoto", photo);
+    // if (validateUrl(photo.photoUrl)) {
+    //   axios.post("/api/addPhoto", photo);
+    //   dispatch({ type: "add_photo", payload: photo });
+    //   setIsAdded(true);
+    // } else {
+    //   console.log("not an url", photoUrl);
+    // }
   };
 
   return (
